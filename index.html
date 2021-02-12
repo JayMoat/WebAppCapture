@@ -77,7 +77,7 @@ if (navigator.mediaDevices.getUserMedia)
     navigator.mediaDevices.getUserMedia(contraints)
   .then(function(stream) {
    track = stream.getTracks()[0];
-   cameraView.srcObject = stream;
+   video.srcObject = stream;
   })
   .catch(function(error) {
     console.log("Something went wrong!");
