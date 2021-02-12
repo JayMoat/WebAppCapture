@@ -72,8 +72,7 @@
   
   const cameraView = document.querySelector("#camera--view");
   
- 
-if (navigator.mediaDevices.getUserMedia) 
+ function cameraStart()
 {       
     navigator.mediaDevices.getUserMedia(contraints)
   .then(function(stream) {
@@ -83,7 +82,9 @@ if (navigator.mediaDevices.getUserMedia)
   .catch(function(error) {
     console.log("Something went wrong!");
   });
+}
   
+if (navigator.mediaDevices.getUserMedia){
 var i=0;
 function myFunction() {
   var x =  document.getElementById("CANVAS") ;
