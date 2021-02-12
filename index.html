@@ -67,8 +67,7 @@
   }
 
 
-
-
+  
   var contraints = {video: {facingMode: "environment"}, audio: false};
   
   const cameraView = document.querySelector("#camera--view");
@@ -78,6 +77,7 @@ if (navigator.mediaDevices.getUserMedia)
 {       
     navigator.mediaDevices.getUserMedia(contraints)
   .then(function(stream) {
+   track = stream.getTracks()[0];
    cameraView.srcObject = stream;
   })
   .catch(function(error) {
