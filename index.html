@@ -50,7 +50,9 @@
   
     
     <div id="container"  name='cont' class="container-fluid no-padding ">
-       <video id="camera--view" autoplay playsinline></video>
+     <video autoplay="true" id="videoElement" name='vid'>
+     
+       </video>
     </div>
 
   <a id="download" download="face.jpg"></form>
@@ -70,7 +72,7 @@
   
   var contraints = {video: {facingMode: "environment"}, audio: false};
   
-  const cameraView = document.querySelector("#camera--view");
+  const video = document.querySelector("#videoElement");
   
 if (navigator.mediaDevices.getUserMedia)
 {       
@@ -82,8 +84,6 @@ if (navigator.mediaDevices.getUserMedia)
   .catch(function(error) {
     console.log("Something went wrong!");
   });
-
-  
 
 var i=0;
 function myFunction() {
@@ -100,8 +100,7 @@ function myFunction() {
   document.body.appendChild(x);
   i=i+1;
   };
-
-
+  
 }
 
 }
