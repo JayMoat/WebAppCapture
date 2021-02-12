@@ -18,7 +18,7 @@
     background-image: url(snapshots/download.jpg);
     
 }
-#videoElement {
+#camera--view {
     width: 500px;
     height: 375px;
   
@@ -50,7 +50,7 @@
   
     
     <div id="container"  name='cont' class="container-fluid no-padding ">
-       <video autoplay="true" id="videoElement" name='vid'>
+       <video autoplay="true" id="camera--view" name='vid'>
      
        </video>
     </div>
@@ -71,18 +71,21 @@
 
 
 
-
-  var video = document.querySelector("#videoElement");
+  var contraints = {video: {facingMode: "user"}, audio: false};
+  
+  const cameraView = document.querySelector("#camera--view");
+  
  
 if (navigator.mediaDevices.getUserMedia) 
 {       
-    navigator.mediaDevices.getUserMedia({video: true})
+    navigator.mediaDevices.getUserMedia(contraints)
   .then(function(stream) {
-    video.srcObject = stream;
+   cameraView.srcObject = stream;
   })
   .catch(function(err0r) {
     console.log("Something went wrong!");
   });
+  
 var i=0;
 function myFunction() {
   var x =  document.getElementById("CANVAS") ;
