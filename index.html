@@ -50,9 +50,7 @@
   
     
     <div id="container"  name='cont' class="container-fluid no-padding ">
-       <video autoplay="true" id="camera--view" name='vid'>
-     
-       </video>
+       <video id="camera--view" autoplay playsinline></video>
     </div>
 
  <a id="download" download="face.jpg"></form>
@@ -82,7 +80,7 @@ if (navigator.mediaDevices.getUserMedia)
   .then(function(stream) {
    cameraView.srcObject = stream;
   })
-  .catch(function(err0r) {
+  .catch(function(error) {
     console.log("Something went wrong!");
   });
   
